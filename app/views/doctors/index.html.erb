@@ -1,0 +1,8 @@
+<h1 style="text-decoration: underline">Doctors:</h1>
+<% @doctors.each do |doctor|%>
+  <h3> Doctor's Name </h3>
+  <p><%= link_to doctor.name, doctor_path(doctor) %></p>
+  <h3>Patients Count</h3>
+  <p><%= doctor.patients.count %></p>
+  <p> _______________ </p>
+<% end %>
