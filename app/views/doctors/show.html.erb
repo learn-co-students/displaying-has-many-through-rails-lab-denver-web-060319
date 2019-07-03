@@ -1,0 +1,10 @@
+<h1 style="text-decoration: underline">Doctor:</h1>
+<h3 style="text-decoration: underline"> Doctor's Name </h3>
+<p> <%= @doctor.name %> </p>
+<h3 style="text-decoration: underline"> Department </h3>
+<p> <%= @doctor.department %> </p>
+<h3 style="text-decoration: underline"> Appointments </h3>
+<% @doctor.appointments.each_with_index do |appointment, i| %>
+  <div><%= link_to "Appointment #{i+1}:", appointment_path(appointment) %> <%= appointment.appointment_datetime.strftime("%B %d, %Y at %H:%M") %>
+    <%= link_to appointment.patient.name, patient_path(appointment.patient) %></div>
+<% end %>
