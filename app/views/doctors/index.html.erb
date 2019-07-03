@@ -1,0 +1,14 @@
+<h1 style="text-decoration: underline">All Doctors!</h1>
+
+<button><%= link_to "All Patients!", patients_path %></button>
+<br><br>
+
+<% @doctors.each do |doctor| %>
+    <h3>Name:</h3>
+    <%= link_to doctor.name, doctor_path(doctor) %>
+    <h3>Department:</h3>
+    <%= doctor.department %>
+    <h3>Number of Patients:</h3>
+    <%= doctor.patients.count %>
+    <h5>_________________________________</h5>
+<% end %>

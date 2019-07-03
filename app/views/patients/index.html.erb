@@ -1,0 +1,15 @@
+<h1 style="text-decoration: underline">All Patients!</h1>
+
+<button><%= link_to "All Doctors!", doctors_path %></button>
+<br><br>
+
+<ul>
+<% @patients.each do |patient| %>
+    <li>
+    <span><strong>Name:</strong></span>
+    <%= link_to patient.name, patient_path(patient) %>
+    <span><em>Number of Appointments:</em></span>
+    <%= patient.appointments.count %>
+    </li>
+<% end %>
+</ul>
